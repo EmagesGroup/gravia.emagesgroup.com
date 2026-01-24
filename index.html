@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
@@ -14,7 +18,45 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ===== MENÚ SUPERIOR ===== */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(11, 60, 93, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .topbar img {
+      height: 42px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .menu a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* ===== HEADER ===== */
     header {
       background: linear-gradient(
           rgba(11, 60, 93, 0.82),
@@ -22,14 +64,13 @@
         ),
         url("assets/gravia-banner.jpg") center / cover no-repeat;
       color: white;
-      padding: 130px 20px;
+      padding: 180px 20px 120px; /* espacio por menú fijo */
       text-align: center;
     }
 
-    .logo {
-      width: 140px;
-      max-width: 80%;
-      margin-bottom: 20px;
+    .logo-hero {
+      width: 150px;
+      margin-bottom: 25px;
     }
 
     header h1 {
@@ -51,9 +92,9 @@
       opacity: 0.85;
     }
 
-    /* SECTIONS */
+    /* ===== SECTIONS ===== */
     section {
-      padding: 60px 20px;
+      padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
     }
@@ -73,25 +114,25 @@
       color: #555;
     }
 
-    /* GRID */
+    /* ===== GRIDS ===== */
     .services,
     .courses {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 22px;
-      margin-top: 35px;
+      margin-top: 40px;
     }
 
     .card {
       background: white;
-      padding: 24px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
+      padding: 26px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease;
     }
 
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
     }
 
     .card h3 {
@@ -105,11 +146,11 @@
       color: #555;
     }
 
-    /* HIGHLIGHT */
+    /* ===== HIGHLIGHT ===== */
     .highlight {
       background: #0b3c5d;
       color: white;
-      padding: 70px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
 
@@ -125,11 +166,11 @@
       opacity: 0.95;
     }
 
-    /* FOOTER */
+    /* ===== FOOTER ===== */
     footer {
       background: #eeeeee;
       text-align: center;
-      padding: 25px 15px;
+      padding: 30px 15px;
       font-size: 14px;
       color: #444;
     }
@@ -145,9 +186,22 @@
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <img src="assets/logo.png" alt="Gravia" class="logo">
+<!-- ===== MENÚ SUPERIOR ===== -->
+<div class="topbar">
+  <img src="assets/logo.png" alt="Gravia">
+
+  <nav class="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#areas">Áreas</a>
+    <a href="#programas">Cursos</a>
+    <a href="#vision">Visión</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="inicio">
+  <img src="assets/logo.png" alt="Gravia" class="logo-hero">
 
   <h1>GRAVIA</h1>
   <p>Centro de Educación Profesional y Capacitación</p>
@@ -157,139 +211,93 @@
   </div>
 </header>
 
-<!-- QUIÉNES SOMOS -->
+<!-- ===== QUIÉNES SOMOS ===== -->
 <section>
   <h2>Quiénes somos</h2>
   <p class="lead">
     GRAVIA es el centro de formación del ecosistema EMAGES GROUP, creado para brindar
     educación profesional accesible, moderna y alineada a las necesidades reales del mercado.
-    Nuestro enfoque combina conocimiento técnico, aplicación práctica y visión estratégica
-    para formar profesionales listos para competir y crecer.
   </p>
 </section>
 
-<!-- ÁREAS DE FORMACIÓN -->
-<section>
+<!-- ===== ÁREAS ===== -->
+<section id="areas">
   <h2>Áreas de formación</h2>
 
   <div class="services">
-
     <div class="card">
       <h3>Administración y Negocios</h3>
-      <p>
-        Formación orientada a la gestión administrativa y negocios, con enfoque práctico
-        aplicado al entorno empresarial moderno.
-      </p>
-      <p><strong>Cursos:</strong> Administración de Empresas, Negocios Internacionales.</p>
+      <p>Administración de empresas y negocios internacionales.</p>
     </div>
 
     <div class="card">
       <h3>Banca y Finanzas</h3>
-      <p>
-        Capacitación enfocada en banca comercial, operaciones financieras
-        y atención al cliente.
-      </p>
-      <p><strong>Cursos:</strong> Cajero Bancario, Atención al Cliente, Productos Financieros.</p>
+      <p>Cajero bancario, atención al cliente y productos financieros.</p>
     </div>
 
     <div class="card">
-      <h3>Contabilidad y Recursos Humanos</h3>
-      <p>
-        Programas prácticos en contabilidad básica y gestión laboral,
-        ideales para personas sin formación contable previa.
-      </p>
-      <p><strong>Cursos:</strong> Contabilidad para No Contadores, Asistente de Planillas.</p>
+      <h3>Contabilidad y RR.HH.</h3>
+      <p>Contabilidad para no contadores y asistente de planillas.</p>
     </div>
 
     <div class="card">
-      <h3>Habilidades Blandas y Empleabilidad</h3>
-      <p>
-        Desarrollo de competencias profesionales para mejorar la empleabilidad
-        y el desempeño laboral.
-      </p>
-      <p><strong>Talleres:</strong> CV Profesional, Entrevistas Laborales.</p>
+      <h3>Habilidades Profesionales</h3>
+      <p>CV, entrevistas laborales y empleabilidad.</p>
     </div>
 
     <div class="card">
       <h3>Computación e Informática</h3>
-      <p>
-        Formación en herramientas informáticas esenciales para el trabajo
-        y el entorno educativo.
-      </p>
-      <p><strong>Cursos:</strong> Excel, Word, PowerPoint.</p>
+      <p>Excel, Word y PowerPoint.</p>
     </div>
 
     <div class="card">
       <h3>Aviación Comercial</h3>
-      <p>
-        Introducción a los fundamentos del sector aeronáutico
-        y la aviación comercial.
-      </p>
-      <p><strong>Contenidos:</strong> Bases de Aviación y Operaciones.</p>
+      <p>Fundamentos de aviación y operaciones.</p>
     </div>
-
   </div>
 </section>
 
-<!-- PROGRAMAS -->
-<section>
+<!-- ===== PROGRAMAS ===== -->
+<section id="programas">
   <h2>Programas y cursos</h2>
 
   <div class="courses">
     <div class="card">
       <h3>Asistente de Planillas</h3>
-      <p>
-        Programa profesional enfocado en legislación laboral, cálculo de planillas,
-        beneficios sociales y sistemas SUNAT.
-      </p>
-      <p><strong>Modalidad:</strong> Virtual</p>
-      <p><strong>Certificación:</strong> GRAVIA</p>
+      <p>Legislación laboral, PLAME y T-Registro.</p>
     </div>
 
     <div class="card">
       <h3>Gestión Laboral Básica</h3>
-      <p>
-        Curso introductorio a normativa laboral, contratos y obligaciones del empleador.
-      </p>
-      <p><strong>Modalidad:</strong> Virtual</p>
+      <p>Contratos, beneficios y obligaciones laborales.</p>
     </div>
 
     <div class="card">
       <h3>Planilla Electrónica</h3>
-      <p>
-        Taller práctico en PLAME y T-Registro con casos reales.
-      </p>
-      <p><strong>Modalidad:</strong> Virtual</p>
+      <p>Taller práctico SUNAT.</p>
     </div>
   </div>
 </section>
 
-<!-- VISIÓN -->
-<section class="highlight">
+<!-- ===== VISIÓN ===== -->
+<section id="vision" class="highlight">
   <h2>Nuestra visión</h2>
   <p>
-    Formar profesionales competentes, éticos y preparados para los retos del mundo laboral,
-    integrando educación aplicada con visión empresarial.
+    Formar profesionales competentes, éticos y preparados para los retos del mundo laboral.
   </p>
 </section>
 
-<!-- CONTACTO -->
-<section>
+<!-- ===== CONTACTO ===== -->
+<section id="contacto">
   <h2>Contacto institucional</h2>
-  <p class="lead">
-    Para información sobre programas, inscripciones y alianzas académicas:
-  </p>
-  <p style="text-align:center; font-size:16px; margin-top:15px;">
-    📧 gravia@emagesgroup.com
-  </p>
+  <p class="lead">📧 gravia@emagesgroup.com</p>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
-  GRAVIA – Centro de Educación Profesional y Capacitación  
+  GRAVIA – Centro de Educación Profesional y Capacitación
   <small>
-    Iniciativa educativa de EMAGES GROUP  
-    <br>
+    Iniciativa educativa de EMAGES GROUP<br>
     EMAGESGROUP E.I.R.L. – RUC 20611427671
   </small>
 </footer>
