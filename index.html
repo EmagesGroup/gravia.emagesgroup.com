@@ -8,34 +8,37 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       background: #f5f7fa;
       color: #333;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(rgba(11,60,93,0.85), rgba(11,60,93,0.85)),
-                  url("gravia-banner.jpg") center/cover no-repeat;
+      background: linear-gradient(rgba(11,60,93,0.75), rgba(11,60,93,0.75)),
+        url("https://raw.githubusercontent.com/EmagesGroup/gravia.emagesgroup.com/main/assets/gravia-banner.jpg")
+        center / cover no-repeat;
       color: white;
-      padding: 100px 20px;
+      padding: 110px 20px;
       text-align: center;
     }
 
     header h1 {
+      margin: 0;
       font-size: 42px;
-      margin-bottom: 10px;
       letter-spacing: 1px;
     }
 
     header p {
-      font-size: 20px;
-      margin: 10px 0;
+      font-size: 18px;
+      max-width: 720px;
+      margin: 15px auto 0;
+      opacity: 0.95;
     }
 
-    header .respaldo {
-      font-size: 14px;
-      margin-top: 20px;
+    .badge {
+      margin-top: 18px;
+      font-size: 13px;
       opacity: 0.85;
     }
 
@@ -46,57 +49,82 @@
     }
 
     h2 {
+      text-align: center;
       color: #0b3c5d;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      font-size: 28px;
     }
 
-    .grid {
+    .lead {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+      font-size: 17px;
+      color: #555;
+    }
+
+    .services, .courses {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
     }
 
     .card {
       background: white;
-      padding: 25px;
+      padding: 24px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
     }
 
-    .highlight {
-      background: #e8f0f7;
-      border-left: 6px solid #0b3c5d;
-      padding: 25px;
-      border-radius: 8px;
+    .card:hover {
+      transform: translateY(-4px);
     }
 
-    .cta {
-      text-align: center;
-      margin-top: 40px;
+    .card h3 {
+      margin-top: 0;
+      color: #0b3c5d;
+      font-size: 20px;
     }
 
-    .cta button {
-      background: #0b3c5d;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    footer {
-      background: #eee;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
+    .card p {
+      font-size: 15px;
       color: #555;
     }
 
-    footer .legal {
+    .highlight {
+      background: #0b3c5d;
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .highlight h2 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .highlight p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 17px;
+      opacity: 0.95;
+    }
+
+    footer {
+      background: #eeeeee;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 8px;
       font-size: 12px;
-      margin-top: 10px;
-      color: #777;
+      color: #666;
     }
   </style>
 </head>
@@ -106,153 +134,117 @@
 <header>
   <h1>GRAVIA</h1>
   <p>Centro de Educación Profesional y Capacitación</p>
-  <p>Formación práctica para el mundo laboral moderno</p>
-  <div class="respaldo">Respaldado por EMAGES GROUP</div>
+  <p>Formación práctica, actualizada y orientada al mercado laboral moderno.</p>
+  <div class="badge">
+    Iniciativa educativa de EMAGES GROUP
+  </div>
 </header>
 
 <section>
   <h2>Quiénes somos</h2>
-  <p>
-    En <strong>GRAVIA – Centro de Educación Profesional y Capacitación</strong>, creemos que la educación debe ser útil,
-    clara y orientada a resultados reales.
+  <p class="lead">
+    GRAVIA es el centro de formación del ecosistema EMAGES GROUP, creado para brindar
+    educación profesional accesible, moderna y alineada a las necesidades reales del mercado.
+    Nuestro enfoque combina conocimiento técnico, aplicación práctica y visión estratégica
+    para formar profesionales listos para competir y crecer.
   </p>
-  <p>
-    Somos una iniciativa educativa de <strong>EMAGES GROUP</strong>, creada para brindar formación práctica en áreas
-    administrativas, laborales, comerciales y de gestión, enfocada en personas que buscan:
-  </p>
-  <ul>
-    <li>Mejorar su empleabilidad</li>
-    <li>Adquirir nuevas competencias</li>
-    <li>Actualizar sus conocimientos</li>
-    <li>Emprender con bases sólidas</li>
-  </ul>
-  <p>
-    Nuestros programas están diseñados por profesionales con experiencia real en el mercado laboral peruano,
-    priorizando la aplicación práctica por encima de la teoría innecesaria.
-  </p>
-</section>
-
-<section>
-  <h2>Nuestra misión</h2>
-  <div class="highlight">
-    Brindar formación profesional accesible, práctica y actualizada, orientada a desarrollar habilidades laborales
-    reales que permitan a nuestros estudiantes mejorar su perfil profesional y su calidad de vida.
-  </div>
-</section>
-
-<section>
-  <h2>Nuestra visión</h2>
-  <div class="highlight">
-    Ser un centro de capacitación reconocido por su enfoque práctico, su seriedad institucional y su impacto positivo
-    en la empleabilidad de miles de personas en el Perú.
-  </div>
-</section>
-
-<section>
-  <h2>Nuestros servicios</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Programas de capacitación profesional</h3>
-      <p>Formación estructurada para el desarrollo laboral.</p>
-    </div>
-    <div class="card">
-      <h3>Cursos técnicos especializados</h3>
-      <p>Contenido práctico orientado al mercado laboral real.</p>
-    </div>
-    <div class="card">
-      <h3>Talleres prácticos aplicados</h3>
-      <p>Aprendizaje basado en casos reales.</p>
-    </div>
-    <div class="card">
-      <h3>Actualización laboral</h3>
-      <p>Programas cortos para profesionales en ejercicio.</p>
-    </div>
-    <div class="card">
-      <h3>Modalidad virtual y grabada</h3>
-      <p>Acceso flexible a los contenidos.</p>
-    </div>
-    <div class="card">
-      <h3>Certificación digital</h3>
-      <p>Constancia de participación al finalizar.</p>
-    </div>
-  </div>
 </section>
 
 <section>
   <h2>Áreas de formación</h2>
-  <div class="grid">
-    <div class="card">Administración y Recursos Humanos</div>
-    <div class="card">Legislación Laboral</div>
-    <div class="card">Planillas y Remuneraciones</div>
-    <div class="card">Gestión Empresarial</div>
-    <div class="card">Marketing y Ventas</div>
-    <div class="card">Comercio y Servicios</div>
-    <div class="card">Emprendimiento</div>
-    <div class="card">Habilidades Profesionales</div>
+  <div class="services">
+    <div class="card">
+      <h3>Gestión Laboral y Planillas</h3>
+      <p>
+        Formación especializada en normativa laboral, planillas electrónicas,
+        beneficios sociales, impuestos y administración de personal.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Administración y Gestión Empresarial</h3>
+      <p>
+        Programas orientados a gestión administrativa, organización empresarial,
+        control operativo y soporte a negocios modernos.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Contabilidad Básica y Tributación</h3>
+      <p>
+        Cursos prácticos en contabilidad, impuestos, obligaciones tributarias
+        y manejo financiero para pequeñas y medianas empresas.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Habilidades Profesionales</h3>
+      <p>
+        Desarrollo de competencias laborales, productividad, herramientas digitales
+        y empleabilidad profesional.
+      </p>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>Próximos programas</h2>
-  <div class="highlight">
-    <ul>
-      <li>Asistente de Planillas</li>
-      <li>Gestión de Recursos Humanos</li>
-      <li>Legislación Laboral Práctica</li>
-      <li>Administración para Emprendedores</li>
-      <li>Marketing Básico para Negocios</li>
-      <li>Gestión Comercial</li>
-    </ul>
-    <p>
-      Estamos desarrollando nuestros primeros programas con enfoque práctico y acompañamiento real.
-    </p>
+  <h2>Programas y cursos</h2>
+  <div class="courses">
+    <div class="card">
+      <h3>Asistente de Planillas</h3>
+      <p>
+        Programa profesional enfocado en legislación laboral, cálculo de planillas,
+        beneficios sociales, AFP/ONP, PLAME, T-Registro y casos prácticos reales.
+      </p>
+      <p><strong>Modalidad:</strong> Virtual en vivo y curso grabado</p>
+      <p><strong>Certificación:</strong> GRAVIA – Centro de Educación Profesional</p>
+    </div>
+
+    <div class="card">
+      <h3>Gestión Laboral Básica</h3>
+      <p>
+        Curso introductorio a normativa laboral peruana, contratos,
+        beneficios sociales y obligaciones del empleador.
+      </p>
+      <p><strong>Modalidad:</strong> Virtual</p>
+    </div>
+
+    <div class="card">
+      <h3>Planilla Electrónica (PLAME y T-Registro)</h3>
+      <p>
+        Taller práctico en el uso de sistemas SUNAT para declaración,
+        registro de trabajadores y generación de archivos.
+      </p>
+      <p><strong>Modalidad:</strong> Virtual</p>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Modalidad de estudio</h2>
-  <div class="grid">
-    <div class="card">Clases virtuales en vivo</div>
-    <div class="card">Cursos grabados (acceso 24/7)</div>
-    <div class="card">Material descargable</div>
-    <div class="card">Casos prácticos reales</div>
-    <div class="card">Evaluaciones simples</div>
-    <div class="card">Certificado digital</div>
-  </div>
+<section class="highlight">
+  <h2>Nuestra visión</h2>
+  <p>
+    Formar profesionales competentes, éticos y preparados para los retos del mundo laboral,
+    integrando educación aplicada con visión empresarial y oportunidades reales de crecimiento.
+  </p>
 </section>
 
 <section>
-  <h2>Respaldo institucional</h2>
-  <div class="highlight">
-    GRAVIA forma parte del ecosistema educativo de <strong>EMAGES GROUP</strong>, grupo empresarial orientado a educación,
-    marketing y comercio.
-    <br><br>
-    Esto garantiza:
-    <ul>
-      <li>Seriedad institucional</li>
-      <li>Continuidad académica</li>
-      <li>Respaldo legal y corporativo</li>
-      <li>Proyección a largo plazo</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Contacto</h2>
-  <p><strong>Contacto académico:</strong> gravia@emagesgroup.com</p>
-  <p><strong>Contacto general del grupo:</strong> hola@emagesgroup.com</p>
-
-  <div class="cta">
-    <button>Más información</button>
-  </div>
+  <h2>Contacto institucional</h2>
+  <p class="lead">
+    Para información sobre programas, inscripciones y alianzas académicas:
+  </p>
+  <p style="text-align:center; font-size:16px; margin-top:15px;">
+    📧 gravia@emagesgroup.com
+  </p>
 </section>
 
 <footer>
-  © 2026 GRAVIA – Centro de Educación Profesional y Capacitación  
-  <div class="legal">
-    EMAGESGROUP E.I.R.L. – RUC 20611427671<br>
-    Iniciativa educativa de EMAGES GROUP
-  </div>
+  GRAVIA – Centro de Educación Profesional y Capacitación  
+  <small>
+    Iniciativa educativa de EMAGES GROUP  
+    <br>
+    EMAGESGROUP E.I.R.L. – RUC 20611427671
+  </small>
 </footer>
 
 </body>
