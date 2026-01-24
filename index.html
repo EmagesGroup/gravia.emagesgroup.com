@@ -14,16 +14,62 @@
       line-height: 1.6;
     }
 
-header {
-  background: linear-gradient(
-      rgba(11, 60, 93, 0.82),
-      rgba(11, 60, 93, 0.82)
-    ),
-    url("assets/gravia-banner.jpg") center / cover no-repeat;
-  color: white;
-  padding: 130px 20px;
-  text-align: center;
-}
+    /* ===== NAVBAR PREMIUM ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand img {
+      height: 42px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #0b3c5d;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.7;
+    }
+
+    .btn-whatsapp {
+      background: #0b3c5d;
+      color: white !important;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      margin-top: 70px;
+      background: linear-gradient(
+          rgba(11, 60, 93, 0.82),
+          rgba(11, 60, 93, 0.82)
+        ),
+        url("assets/gravia-banner.jpg") center / cover no-repeat;
+      color: white;
+      padding: 130px 20px;
+      text-align: center;
+    }
 
     header h1 {
       margin: 0;
@@ -42,6 +88,12 @@ header {
       margin-top: 18px;
       font-size: 13px;
       opacity: 0.85;
+    }
+
+    .logo {
+      width: 140px;
+      max-width: 80%;
+      margin-bottom: 20px;
     }
 
     section {
@@ -128,19 +180,31 @@ header {
       font-size: 12px;
       color: #666;
     }
-.logo {
-  width: 140px;
-  max-width: 80%;
-  margin-bottom: 20px;
-}
-</style>
+  </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="Gravia">
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/51930175586" target="_blank" class="btn-whatsapp">
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
 <header>
   <img src="assets/logo.png" alt="Gravia" class="logo">
-
   <h1>GRAVIA</h1>
   <p>Centro de Educación Profesional y Capacitación</p>
   <p>Formación práctica, actualizada y orientada al mercado laboral moderno.</p>
@@ -148,7 +212,6 @@ header {
     Iniciativa educativa de EMAGES GROUP
   </div>
 </header>
-
 
 <section>
   <h2>Quiénes somos</h2>
@@ -165,66 +228,39 @@ header {
   <div class="services">
     <div class="card">
       <h3>Gestión Laboral y Planillas</h3>
-      <p>
-        Formación especializada en normativa laboral, planillas electrónicas,
-        beneficios sociales, impuestos y administración de personal.
-      </p>
+      <p>Formación especializada en normativa laboral, planillas electrónicas y administración de personal.</p>
     </div>
-
     <div class="card">
       <h3>Administración y Gestión Empresarial</h3>
-      <p>
-        Programas orientados a gestión administrativa, organización empresarial,
-        control operativo y soporte a negocios modernos.
-      </p>
+      <p>Programas orientados a gestión administrativa y control operativo.</p>
     </div>
-
     <div class="card">
       <h3>Contabilidad Básica y Tributación</h3>
-      <p>
-        Cursos prácticos en contabilidad, impuestos, obligaciones tributarias
-        y manejo financiero para pequeñas y medianas empresas.
-      </p>
+      <p>Cursos prácticos en contabilidad, impuestos y manejo financiero.</p>
     </div>
-
     <div class="card">
       <h3>Habilidades Profesionales</h3>
-      <p>
-        Desarrollo de competencias laborales, productividad, herramientas digitales
-        y empleabilidad profesional.
-      </p>
+      <p>Competencias laborales, productividad y empleabilidad profesional.</p>
     </div>
   </div>
 </section>
 
-<section>
+<section id="cursos">
   <h2>Programas y cursos</h2>
   <div class="courses">
     <div class="card">
       <h3>Asistente de Planillas</h3>
-      <p>
-        Programa profesional enfocado en legislación laboral, cálculo de planillas,
-        beneficios sociales, AFP/ONP, PLAME, T-Registro y casos prácticos reales.
-      </p>
-      <p><strong>Modalidad:</strong> Virtual en vivo y curso grabado</p>
-      <p><strong>Certificación:</strong> GRAVIA – Centro de Educación Profesional</p>
-    </div>
-
-    <div class="card">
-      <h3>Gestión Laboral Básica</h3>
-      <p>
-        Curso introductorio a normativa laboral peruana, contratos,
-        beneficios sociales y obligaciones del empleador.
-      </p>
+      <p>Legislación laboral, planillas, AFP/ONP, PLAME y T-Registro.</p>
       <p><strong>Modalidad:</strong> Virtual</p>
     </div>
-
     <div class="card">
-      <h3>Planilla Electrónica (PLAME y T-Registro)</h3>
-      <p>
-        Taller práctico en el uso de sistemas SUNAT para declaración,
-        registro de trabajadores y generación de archivos.
-      </p>
+      <h3>Gestión Laboral Básica</h3>
+      <p>Curso introductorio a normativa laboral peruana.</p>
+      <p><strong>Modalidad:</strong> Virtual</p>
+    </div>
+    <div class="card">
+      <h3>Planilla Electrónica</h3>
+      <p>Taller práctico PLAME y T-Registro.</p>
       <p><strong>Modalidad:</strong> Virtual</p>
     </div>
   </div>
@@ -233,16 +269,13 @@ header {
 <section class="highlight">
   <h2>Nuestra visión</h2>
   <p>
-    Formar profesionales competentes, éticos y preparados para los retos del mundo laboral,
-    integrando educación aplicada con visión empresarial y oportunidades reales de crecimiento.
+    Formar profesionales competentes, éticos y preparados para los retos del mundo laboral.
   </p>
 </section>
 
-<section>
+<section id="contacto">
   <h2>Contacto institucional</h2>
-  <p class="lead">
-    Para información sobre programas, inscripciones y alianzas académicas:
-  </p>
+  <p class="lead">Para información sobre programas, inscripciones y alianzas:</p>
   <p style="text-align:center; font-size:16px; margin-top:15px;">
     📧 gravia@emagesgroup.com
   </p>
@@ -251,8 +284,7 @@ header {
 <footer>
   GRAVIA – Centro de Educación Profesional y Capacitación  
   <small>
-    Iniciativa educativa de EMAGES GROUP  
-    <br>
+    Iniciativa educativa de EMAGES GROUP<br>
     EMAGESGROUP E.I.R.L. – RUC 20611427671
   </small>
 </footer>
