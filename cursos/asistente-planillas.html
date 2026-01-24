@@ -2,10 +2,310 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cursos | Gravia</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>Asistente de Planillas | GRAVIA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ===== TOPBAR ===== */
+    .topbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(11,60,93,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 35px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .topbar img { height: 42px; }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .menu a:hover { opacity: 1; text-decoration: underline; }
+
+    /* ===== HERO ===== */
+    header {
+      background:
+        linear-gradient(rgba(11,60,93,0.85), rgba(11,60,93,0.85)),
+        url("assets/gravia-banner.jpg") center / cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 190px 20px 130px;
+    }
+
+    header img {
+      width: 150px;
+      margin-bottom: 25px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 15px auto 0;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .cta {
+      margin-top: 30px;
+    }
+
+    .cta a {
+      background: #25d366;
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-block;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0b3c5d;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .lead {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+      font-size: 17px;
+      color: #555;
+    }
+
+    /* ===== INFO GRID ===== */
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .box {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .box h3 {
+      margin-top: 0;
+      color: #0b3c5d;
+      font-size: 18px;
+    }
+
+    /* ===== MODULES ===== */
+    .modules li {
+      margin-bottom: 10px;
+    }
+
+    /* ===== HIGHLIGHT ===== */
+    .highlight {
+      background: #0b3c5d;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .highlight h2 { color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Cursos Gravia</h1>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <img src="assets/logo.png" alt="Gravia">
+
+  <nav class="menu">
+    <a href="#programa">Programa</a>
+    <a href="#temario">Temario</a>
+    <a href="#certificacion">Certificación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</div>
+
+<!-- ===== HERO ===== -->
+<header>
+  <img src="assets/logo.png" alt="Gravia">
+
+  <h1>Asistente de Planillas</h1>
+  <p>
+    Curso profesional orientado a la gestión laboral, cálculo de planillas,
+    beneficios sociales y uso de sistemas SUNAT.
+  </p>
+
+  <div class="cta">
+    <a href="https://wa.me/51930175586?text=Hola%20quiero%20información%20sobre%20el%20curso%20Asistente%20de%20Planillas%20GRAVIA" target="_blank">
+      💬 Solicitar información por WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- ===== PROGRAMA ===== -->
+<section id="programa">
+  <h2>Información del programa</h2>
+
+  <div class="info">
+    <div class="box">
+      <h3>Modalidad</h3>
+      <p>Virtual en vivo + acceso a clases grabadas</p>
+    </div>
+
+    <div class="box">
+      <h3>Duración</h3>
+      <p>8 semanas (inicio permanente)</p>
+    </div>
+
+    <div class="box">
+      <h3>Carga académica</h3>
+      <p>120 horas académicas</p>
+    </div>
+
+    <div class="box">
+      <h3>Certificación</h3>
+      <p>GRAVIA – Centro de Educación Profesional<br>Lima – Perú</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMARIO ===== -->
+<section id="temario">
+  <h2>Temario del curso</h2>
+
+  <div class="info">
+    <div class="box">
+      <h3>Marco laboral</h3>
+      <ul class="modules">
+        <li>Derecho laboral y OIT</li>
+        <li>Regímenes laborales</li>
+        <li>Essalud, AFP y ONP</li>
+        <li>Contratos y modalidades formativas</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>Beneficios sociales</h3>
+      <ul class="modules">
+        <li>CTS y cálculo</li>
+        <li>Gratificaciones</li>
+        <li>Vacaciones</li>
+        <li>Vida ley y utilidades</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>Subsidios y liquidaciones</h3>
+      <ul class="modules">
+        <li>Maternidad y paternidad</li>
+        <li>Lactancia y sepelio</li>
+        <li>Cálculo de liquidaciones</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>Planilla electrónica</h3>
+      <ul class="modules">
+        <li>T-Registro</li>
+        <li>PLAME</li>
+        <li>AFP Net</li>
+        <li>Casos prácticos reales</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICACIÓN ===== -->
+<section id="certificacion" class="highlight">
+  <h2>Certificación oficial</h2>
+  <p>
+    Al finalizar el curso, el participante obtendrá un certificado digital
+    con código único de verificación, indicando fechas reales de inicio y término,
+    carga académica y respaldo institucional de GRAVIA.
+  </p>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto">
+  <h2>Contacto institucional</h2>
+  <p class="lead">
+    Escríbenos para información sobre inscripciones, horarios y vacantes.
+  </p>
+
+  <p style="text-align:center; font-size:16px;">
+    📧 gravia@emagesgroup.com
+  </p>
+
+  <p style="text-align:center; margin-top:20px;">
+    <a href="https://wa.me/51930175586?text=Hola%20quiero%20información%20sobre%20el%20curso%20Asistente%20de%20Planillas%20GRAVIA"
+       target="_blank"
+       style="background:#25d366;color:#fff;padding:14px 26px;border-radius:30px;text-decoration:none;font-weight:600;">
+      💬 Escríbenos por WhatsApp
+    </a>
+  </p>
+</section>
+
+<footer>
+  GRAVIA – Centro de Educación Profesional y Capacitación
+  <small>
+    Iniciativa educativa de EMAGES GROUP<br>
+    EMAGESGROUP E.I.R.L. – RUC 20611427671
+  </small>
+</footer>
+
 </body>
 </html>
