@@ -1,306 +1,295 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>GRAVIA | Centro de Educación Profesional y Capacitación</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>GRAVIA | Formación Profesional y Capacitación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico -->
+  <meta name="description" content="GRAVIA es una plataforma de formación profesional en administración, finanzas, contabilidad, computación y habilidades laborales. Capacitación práctica para el empleo.">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8f9fb;
+      color: #222;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* ===== MENÚ SUPERIOR ===== */
-    .topbar {
+    /* HEADER */
+    header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      height: 70px;
-      background: rgba(11, 60, 93, 0.95);
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 40px;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    .topbar img {
-      height: 42px;
+    .logo img {
+      height: 48px;
     }
 
-    .menu a {
-      color: #fff;
+    nav a {
+      margin-left: 22px;
       text-decoration: none;
-      margin-left: 25px;
-      font-size: 14px;
+      color: #222;
       font-weight: 500;
-      opacity: 0.9;
+      font-size: 15px;
     }
 
-    .menu a:hover {
-      opacity: 1;
-      text-decoration: underline;
+    nav a:hover {
+      color: #0057ff;
     }
 
-    /* ===== HEADER ===== */
-    header {
-      background: linear-gradient(
-          rgba(11, 60, 93, 0.82),
-          rgba(11, 60, 93, 0.82)
-        ),
-        url("assets/gravia-banner.jpg") center / cover no-repeat;
+    /* HERO */
+    .hero {
+      margin-top: 90px;
+      padding: 90px 20px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
-      padding: 180px 20px 120px; /* espacio por menú fijo */
       text-align: center;
     }
 
-    .logo-hero {
-      width: 150px;
-      margin-bottom: 25px;
-    }
-
-    header h1 {
-      margin: 0;
+    .hero h1 {
       font-size: 42px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 18px;
-      max-width: 720px;
-      margin: 15px auto 0;
-      opacity: 0.95;
-    }
-
-    .badge {
-      margin-top: 18px;
-      font-size: 13px;
-      opacity: 0.85;
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 70px 20px;
-      max-width: 1100px;
+      max-width: 800px;
       margin: auto;
     }
 
-    h2 {
-      text-align: center;
-      color: #0b3c5d;
-      margin-bottom: 25px;
-      font-size: 28px;
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 20px auto 35px;
+      color: #cbd5f5;
     }
 
-    .lead {
+    .hero a {
+      background: #25d366;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .hero a:hover {
+      background: #1ebe5d;
+    }
+
+    /* SECCIONES */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    section h2 {
       text-align: center;
-      max-width: 850px;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    section .lead {
+      text-align: center;
+      max-width: 750px;
       margin: auto;
       font-size: 17px;
       color: #555;
     }
 
-    /* ===== GRIDS ===== */
-    .services,
-    .courses {
+    /* AREAS */
+    .areas {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      margin-top: 40px;
+      gap: 25px;
+      margin-top: 50px;
     }
 
-    .card {
+    .area {
       background: white;
-      padding: 26px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    .card h3 {
+    .area h3 {
       margin-top: 0;
-      color: #0b3c5d;
-      font-size: 20px;
+      color: #0f172a;
     }
 
-    .card p {
-      font-size: 15px;
-      color: #555;
-    }
-
-    /* ===== HIGHLIGHT ===== */
-    .highlight {
-      background: #0b3c5d;
+    /* CONTACTO */
+    #contacto {
+      background: #0f172a;
       color: white;
-      padding: 80px 20px;
+      border-radius: 20px;
+      margin-bottom: 60px;
+    }
+
+    #contacto h2 {
+      color: white;
+    }
+
+    #contacto p {
       text-align: center;
+      color: #cbd5f5;
     }
 
-    .highlight h2 {
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .highlight p {
-      max-width: 850px;
-      margin: auto;
-      font-size: 17px;
-      opacity: 0.95;
-    }
-
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     footer {
-      background: #eeeeee;
       text-align: center;
-      padding: 30px 15px;
+      padding: 25px;
       font-size: 14px;
-      color: #444;
+      color: #777;
     }
 
-    footer small {
-      display: block;
-      margin-top: 8px;
-      font-size: 12px;
-      color: #666;
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      border-radius: 50px;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 2000;
+    }
+
+    .whatsapp-float:hover {
+      background: #1ebe5d;
     }
   </style>
 </head>
 
 <body>
 
-<!-- ===== MENÚ SUPERIOR ===== -->
-<div class="topbar">
-  <img src="assets/logo.png" alt="Gravia">
-
-  <nav class="menu">
-    <a href="#inicio">Inicio</a>
-    <a href="#areas">Áreas</a>
-    <a href="#programas">Cursos</a>
-    <a href="#vision">Visión</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</div>
-
-<!-- ===== HEADER ===== -->
-<header id="inicio">
-  <img src="assets/logo.png" alt="Gravia" class="logo-hero">
-
-  <h1>GRAVIA</h1>
-  <p>Centro de Educación Profesional y Capacitación</p>
-  <p>Formación práctica, actualizada y orientada al mercado laboral moderno.</p>
-  <div class="badge">
-    Iniciativa educativa de EMAGES GROUP
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Gravia">
+    </div>
+    <nav>
+      <a href="#areas">Áreas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </div>
 </header>
 
-<!-- ===== QUIÉNES SOMOS ===== -->
-<section>
-  <h2>Quiénes somos</h2>
-  <p class="lead">
-    GRAVIA es el centro de formación del ecosistema EMAGES GROUP, creado para brindar
-    educación profesional accesible, moderna y alineada a las necesidades reales del mercado.
+<!-- HERO -->
+<div class="hero">
+  <h1>Formación profesional práctica para crecer, trabajar y avanzar</h1>
+  <p>
+    En GRAVIA formamos personas para el empleo y el desarrollo profesional,
+    con cursos claros, aplicables y orientados al mercado laboral actual.
   </p>
-</section>
+  <a href="https://wa.me/51930175586?text=Hola%20quiero%20información%20sobre%20los%20cursos%20de%20GRAVIA" target="_blank">
+    💬 Solicitar información por WhatsApp
+  </a>
+</div>
 
-<!-- ===== ÁREAS ===== -->
+<!-- AREAS -->
 <section id="areas">
   <h2>Áreas de formación</h2>
+  <p class="lead">
+    Programas diseñados para fortalecer tus competencias profesionales y mejorar
+    tus oportunidades laborales.
+  </p>
 
-  <div class="services">
-    <div class="card">
+  <div class="areas">
+    <div class="area">
       <h3>Administración y Negocios</h3>
-      <p>Administración de empresas y negocios internacionales.</p>
+      <p>
+        Fundamentos de administración, negocios y gestión empresarial orientados
+        al entorno organizacional actual.
+      </p>
     </div>
 
-    <div class="card">
+    <div class="area">
       <h3>Banca y Finanzas</h3>
-      <p>Cajero bancario, atención al cliente y productos financieros.</p>
+      <p>
+        Cajero bancario y comercial, atención al cliente, productos financieros
+        y operaciones del sistema financiero.
+      </p>
     </div>
 
-    <div class="card">
+    <div class="area">
       <h3>Contabilidad y RR.HH.</h3>
-      <p>Contabilidad para no contadores y asistente de planillas.</p>
+      <p>
+        Contabilidad básica para no contadores, planillas, asistencia contable
+        y gestión administrativa.
+      </p>
     </div>
 
-    <div class="card">
+    <div class="area">
       <h3>Habilidades Profesionales</h3>
-      <p>CV, entrevistas laborales y empleabilidad.</p>
+      <p>
+        Empleabilidad, elaboración de CV, preparación para entrevistas laborales
+        y habilidades blandas.
+      </p>
     </div>
 
-    <div class="card">
+    <div class="area">
       <h3>Computación e Informática</h3>
-      <p>Excel, Word y PowerPoint.</p>
+      <p>
+        Word, Excel, PowerPoint y herramientas digitales aplicadas al trabajo
+        y al estudio.
+      </p>
     </div>
 
-    <div class="card">
+    <div class="area">
       <h3>Aviación Comercial</h3>
-      <p>Fundamentos de aviación y operaciones.</p>
+      <p>
+        Fundamentos de aviación comercial y formación básica para el sector
+        aeronáutico.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ===== PROGRAMAS ===== -->
-<section id="programas">
-  <h2>Programas y cursos</h2>
+<!-- CONTACTO -->
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p class="lead">
+    Escríbenos para recibir información sobre cursos, fechas de inicio y certificaciones.
+  </p>
 
-  <div class="courses">
-    <div class="card">
-      <h3>Asistente de Planillas</h3>
-      <p>Legislación laboral, PLAME y T-Registro.</p>
-    </div>
+  <p>📧 gravia@emagesgroup.com</p>
 
-    <div class="card">
-      <h3>Gestión Laboral Básica</h3>
-      <p>Contratos, beneficios y obligaciones laborales.</p>
-    </div>
-
-    <div class="card">
-      <h3>Planilla Electrónica</h3>
-      <p>Taller práctico SUNAT.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== VISIÓN ===== -->
-<section id="vision" class="highlight">
-  <h2>Nuestra visión</h2>
-  <p>
-    Formar profesionales competentes, éticos y preparados para los retos del mundo laboral.
+  <p style="margin-top:25px;">
+    <a href="https://wa.me/51930175586?text=Hola%20quiero%20información%20sobre%20los%20cursos%20de%20GRAVIA"
+       target="_blank"
+       style="background:#25d366;color:#fff;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:600;">
+      💬 Escríbenos por WhatsApp
+    </a>
   </p>
 </section>
 
-<!-- ===== CONTACTO ===== -->
-<section id="contacto">
-  <h2>Contacto institucional</h2>
-  <p class="lead">📧 gravia@emagesgroup.com</p>
-</section>
-
-<!-- ===== FOOTER ===== -->
 <footer>
-  GRAVIA – Centro de Educación Profesional y Capacitación
-  <small>
-    Iniciativa educativa de EMAGES GROUP<br>
-    EMAGESGROUP E.I.R.L. – RUC 20611427671
-  </small>
+  © 2026 GRAVIA · Formación y Capacitación Profesional
 </footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a
+  href="https://wa.me/51930175586?text=Hola%20quiero%20información%20sobre%20los%20cursos%20de%20GRAVIA"
+  class="whatsapp-float"
+  target="_blank"
+>
+  💬 WhatsApp
+</a>
 
 </body>
 </html>
