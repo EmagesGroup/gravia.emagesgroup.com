@@ -89,24 +89,25 @@
       display: inline-block;
     }
 
-  /* ===== BOTÓN VOLVER ===== */
-  .btn-back {
-    background: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    padding: 12px 26px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    display: inline-block;
-    transition: all 0.3s ease;
-  }
+    /* ===== BOTÓN VOLVER ===== */
+    .btn-back {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      padding: 12px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-block;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
 
-  .btn-back:hover {
-    background: #ffffff;
-    color: #0b3c5d;
-  }
+    .btn-back:hover {
+      background: #ffffff;
+      color: #0b3c5d;
+    }
 
     /* ===== SECTIONS ===== */
     section {
@@ -130,7 +131,6 @@
       color: #555;
     }
 
-    /* ===== INFO GRID ===== */
     .info {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -151,12 +151,8 @@
       font-size: 18px;
     }
 
-    /* ===== MODULES ===== */
-    .modules li {
-      margin-bottom: 10px;
-    }
+    .modules li { margin-bottom: 10px; }
 
-    /* ===== HIGHLIGHT ===== */
     .highlight {
       background: #0b3c5d;
       color: #fff;
@@ -166,7 +162,6 @@
 
     .highlight h2 { color: #fff; }
 
-    /* ===== FOOTER ===== */
     footer {
       background: #eee;
       text-align: center;
@@ -189,7 +184,6 @@
 <!-- ===== TOPBAR ===== -->
 <div class="topbar">
   <img src="../assets/logo.png" alt="Gravia">
-
   <nav class="menu">
     <a href="#programa">Programa</a>
     <a href="#temario">Temario</a>
@@ -202,7 +196,7 @@
 <header>
   <img src="../assets/logo.png" alt="Gravia">
 
-  <h1>Asistente de Planillas</h1>
+  <h1>asistente-planillas</h1>
   <p>
     Curso profesional orientado a la gestión laboral, cálculo de planillas,
     beneficios sociales y uso de sistemas SUNAT.
@@ -213,117 +207,39 @@
       💬 Solicitar información por WhatsApp
     </a>
   </div>
+
+  <!-- BOTÓN VOLVER -->
+  <div class="cta">
+    <a href="https://gravia.emagesgroup.com" class="btn-back">
+      ⬅ Volver a GRAVIA
+    </a>
+  </div>
 </header>
 
 <!-- ===== PROGRAMA ===== -->
 <section id="programa">
   <h2>Información del programa</h2>
-
   <div class="info">
-    <div class="box">
-      <h3>Modalidad</h3>
-      <p>Virtual en vivo + acceso a clases grabadas</p>
-    </div>
-
-    <div class="box">
-      <h3>Duración</h3>
-      <p>8 semanas – inicio permanente</p>
-    </div>
-
-    <div class="box">
-      <h3>Carga académica</h3>
-      <p>120 horas académicas</p>
-    </div>
-
-    <div class="box">
-      <h3>Certificación</h3>
-      <p>GRAVIA – Centro de Educación Profesional<br>Lima – Perú</p>
-    </div>
+    <div class="box"><h3>Modalidad</h3><p>Virtual en vivo + acceso grabado</p></div>
+    <div class="box"><h3>Duración</h3><p>8 semanas</p></div>
+    <div class="box"><h3>Carga académica</h3><p>120 horas</p></div>
+    <div class="box"><h3>Certificación</h3><p>GRAVIA – Lima, Perú</p></div>
   </div>
 </section>
 
-<!-- ===== TEMARIO ===== -->
-<section id="temario">
-  <h2>Temario del curso</h2>
-
-  <div class="info">
-    <div class="box">
-      <h3>Marco laboral</h3>
-      <ul class="modules">
-        <li>Derecho laboral y OIT</li>
-        <li>Regímenes laborales</li>
-        <li>Essalud, AFP y ONP</li>
-        <li>Contratos y modalidades formativas</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h3>Beneficios sociales</h3>
-      <ul class="modules">
-        <li>CTS y cálculo</li>
-        <li>Gratificaciones</li>
-        <li>Vacaciones</li>
-        <li>Vida ley y utilidades</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h3>Subsidios y liquidaciones</h3>
-      <ul class="modules">
-        <li>Maternidad, paternidad y lactancia</li>
-        <li>Sepelio</li>
-        <li>Cálculo de liquidaciones</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h3>Planilla electrónica</h3>
-      <ul class="modules">
-        <li>T-Registro</li>
-        <li>PLAME</li>
-        <li>AFP Net</li>
-        <li>Casos prácticos reales</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CERTIFICACIÓN ===== -->
 <section id="certificacion" class="highlight">
   <h2>Certificación oficial</h2>
-  <p>
-    Al finalizar el curso, el participante obtendrá un certificado digital
-    con código único de verificación, indicando carga académica,
-    fechas reales y respaldo institucional de GRAVIA.
-  </p>
+  <p>Certificado digital con verificación institucional GRAVIA.</p>
 </section>
 
-<!-- ===== CONTACTO ===== -->
 <section id="contacto">
   <h2>Contacto institucional</h2>
-  <p class="lead">
-    Escríbenos para información sobre inscripciones, horarios y vacantes.
-  </p>
-
-  <p style="text-align:center; font-size:16px;">
-    📧 gravia@emagesgroup.com
-  </p>
-
-  <p style="text-align:center; margin-top:20px;">
-    <a href="https://wa.me/51930175586?text=Hola%20quiero%20información%20sobre%20el%20curso%20asistente-planillas%20GRAVIA"
-       target="_blank"
-       style="background:#25d366;color:#fff;padding:14px 26px;border-radius:30px;text-decoration:none;font-weight:600;">
-      💬 Escríbenos por WhatsApp
-    </a>
-  </p>
+  <p class="lead">📧 gravia@emagesgroup.com</p>
 </section>
 
 <footer>
-  GRAVIA – Centro de Educación Profesional y Capacitación
-  <small>
-    Iniciativa educativa de EMAGES GROUP<br>
-    EMAGESGROUP E.I.R.L. – RUC 20611427671
-  </small>
+  GRAVIA – Centro de Educación Profesional
+  <small>EMAGESGROUP E.I.R.L. – RUC 20611427671</small>
 </footer>
 
 </body>
