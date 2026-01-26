@@ -9,41 +9,103 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
+      background-color: #111;
     }
 
-    header {
-      background: #0a3d62;
-      color: white;
-      padding: 15px;
+    .header {
+      background-color: #0b3a5c;
+      color: #fff;
+      padding: 14px 20px;
       text-align: center;
-      font-size: 18px;
+      font-size: 15px;
     }
 
-    .pdf-container {
-      width: 100%;
-      height: calc(100vh - 60px);
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 6px;
+      text-align: center;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    .cert-preview {
+      max-width: 100%;
+      border: 1px solid #ddd;
+      margin-bottom: 25px;
+    }
+
+    .info {
+      text-align: left;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .info p {
+      margin: 6px 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #0b3a5c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background-color: #092f49;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #555;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  Certificado emitido por GRAVIA – Formación y Capacitación Profesional
-</header>
+  <div class="header">
+    Certificado emitido por GRAVIA – Formación y Capacitación Profesional
+  </div>
 
-<div class="pdf-container">
-  <iframe 
-    src="https://drive.google.com/file/d/1CGMqRkAj9n9juTcJbuVaq4HXThj8HyjE/preview">
-  </iframe>
-</div>
+  <div class="container">
+
+    <!-- PREVIEW DEL CERTIFICADO -->
+    <img 
+      src="assets/preview-certificado.png" 
+      alt="Vista previa del certificado"
+      class="cert-preview"
+    >
+
+    <!-- INFORMACIÓN -->
+    <div class="info">
+      <p><strong>Participante:</strong> Juan Pérez Gómez</p>
+      <p><strong>Programa:</strong> Asistente de Planillas</p>
+      <p><strong>Año de emisión:</strong> 2025</p>
+      <p><strong>Código único:</strong> GRV-CERT-2025-AP-000001</p>
+    </div>
+
+    <!-- DESCARGA DIRECTA -->
+    <a 
+      class="download-btn"
+      href="https://drive.google.com/uc?export=download&id=1CGMqRkAj9n9juTcJbuVaq4HXThj8HyjE"
+      target="_blank"
+    >
+      Descargar certificado en PDF
+    </a>
+
+    <div class="footer">
+      Documento digital válido. La autenticidad puede ser verificada en
+      <strong>gravia.emagesgroup.com</strong>
+    </div>
+
+  </div>
 
 </body>
 </html>
