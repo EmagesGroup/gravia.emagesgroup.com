@@ -2,76 +2,98 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Validación de Certificados | GRAVIA</title>
+  <title>Certificados | GRAVIA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #f4f6f8;
-      padding: 40px;
+      margin: 0;
+      padding: 0;
     }
 
-    .contenedor {
-      max-width: 600px;
-      margin: auto;
+    .container {
+      max-width: 520px;
+      margin: 80px auto;
       background: #ffffff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 35px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     h1 {
       text-align: center;
       color: #0a3d62;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 25px;
     }
 
     input {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       font-size: 16px;
-      margin-top: 15px;
-      border-radius: 5px;
+      border-radius: 6px;
       border: 1px solid #ccc;
+      margin-bottom: 15px;
     }
 
     button {
       width: 100%;
-      padding: 12px;
-      margin-top: 15px;
       background: #0a3d62;
-      color: #fff;
+      color: white;
       border: none;
+      padding: 14px;
       font-size: 16px;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
     }
 
     button:hover {
-      background: #07507a;
+      background: #08314f;
     }
 
-    .resultado {
-      margin-top: 25px;
+    .results {
+      margin-top: 30px;
     }
 
-    .certificado {
-      border-left: 4px solid #2ecc71;
-      padding: 10px;
+    .cert {
+      background: #f8fafc;
+      border-left: 4px solid #0a3d62;
+      padding: 15px;
+      border-radius: 6px;
       margin-bottom: 15px;
-      background: #f9f9f9;
     }
 
-    .certificado a {
+    .cert-title {
+      font-weight: bold;
+      color: #0a3d62;
+    }
+
+    .cert-code {
+      font-size: 13px;
+      color: #666;
+      margin: 6px 0;
+    }
+
+    .cert a {
       display: inline-block;
-      margin-top: 5px;
+      margin-top: 8px;
       text-decoration: none;
       color: #0a3d62;
       font-weight: bold;
     }
 
-    .error {
-      color: red;
-      margin-top: 15px;
+    .note {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #777;
       text-align: center;
     }
   </style>
@@ -79,57 +101,52 @@
 
 <body>
 
-<div class="contenedor">
-  <h1>Validación de Certificados</h1>
+  <div class="container">
+    <h1>Certificados GRAVIA</h1>
+    <div class="subtitle">
+      Consulta y descarga de certificados emitidos por GRAVIA – Formación y Capacitación Profesional.
+    </div>
 
-  <p>Ingrese su DNI para verificar sus certificados emitidos por GRAVIA.</p>
+    <input type="text" id="dni" placeholder="Ingrese su DNI">
+    <button onclick="buscarCertificados()">Buscar certificados</button>
 
-  <input type="text" id="dni" placeholder="Ingrese su DNI">
-  <button onclick="buscarCertificados()">Buscar certificados</button>
+    <div class="results" id="resultados"></div>
 
-  <div id="resultado" class="resultado"></div>
-</div>
+    <div class="note">
+      Los certificados digitales emitidos por GRAVIA tienen validez institucional y pueden ser verificados en línea.
+    </div>
+  </div>
 
-<script>
-function buscarCertificados() {
-  const dni = document.getElementById("dni").value.trim();
-  const resultado = document.getElementById("resultado");
+  <script>
+    function buscarCertificados() {
+      const dni = document.getElementById("dni").value.trim();
+      const resultados = document.getElementById("resultados");
+      resultados.innerHTML = "";
 
-  resultado.innerHTML = "";
+      // EJEMPLO DE DATOS (luego se automatiza)
+      if (dni === "12345678") {
+        resultados.innerHTML = `
+          <h3>Certificados encontrados:</h3>
 
-  const baseCertificados = {
-    "12345678": [
-      {
-        nombre: "Asistente de Planillas – 2024",
-        codigo: "GRV-APL-2024-000087",
-        pdf: "https://drive.google.com/file/d/1CGMqRkAj9n9juTcJbuVaq4HXThj8HyjE/view"
-      },
-      {
-        nombre: "Cajero Bancario y Comercial – 2025",
-        codigo: "GRV-CBC-2025-000031",
-        pdf: "https://drive.google.com/file/d/XXXXXXXXXXXX/view"
+          <div class="cert">
+            <div class="cert-title">✔ Asistente de Planillas – 2024</div>
+            <div class="cert-code">Código único: GRV-APL-2024-000087</div>
+            <a href="ver-certificado.html" target="_blank">📄 Ver certificado (PDF)</a>
+          </div>
+
+          <div class="cert">
+            <div class="cert-title">✔ Cajero Bancario y Comercial – 2025</div>
+            <div class="cert-code">Código único: GRV-CBC-2025-000031</div>
+            <a href="ver-certificado.html" target="_blank">📄 Ver certificado (PDF)</a>
+          </div>
+        `;
+      } else {
+        resultados.innerHTML = `
+          <p>No se encontraron certificados asociados al DNI ingresado.</p>
+        `;
       }
-    ]
-  };
-
-  if (baseCertificados[dni]) {
-    resultado.innerHTML = "<h3>Certificados encontrados:</h3>";
-
-    baseCertificados[dni].forEach(cert => {
-      resultado.innerHTML += `
-        <div class="certificado">
-          ✔ <strong>${cert.nombre}</strong><br>
-          Código: ${cert.codigo}<br>
-          <a href="${cert.pdf}" target="_blank">📄 Descargar PDF</a>
-        </div>
-      `;
-    });
-
-  } else {
-    resultado.innerHTML = "<p class='error'>No se encontraron certificados para este DNI.</p>";
-  }
-}
-</script>
+    }
+  </script>
 
 </body>
 </html>
