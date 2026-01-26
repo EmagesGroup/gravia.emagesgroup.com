@@ -2,120 +2,134 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Certificados y Constancias | GRAVIA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validación de Certificados | GRAVIA</title>
 
   <style>
-    * { box-sizing: border-box; }
-
     body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 40px;
     }
 
-    header {
-      background: #0b3c5d;
-      color: #fff;
-      padding: 80px 20px 60px;
+    .contenedor {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 34px;
-    }
-
-    header p {
-      margin-top: 12px;
-      font-size: 17px;
-      opacity: 0.95;
-    }
-
-    main {
-      max-width: 720px;
-      margin: -40px auto 60px;
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 8px;
+      color: #0a3d62;
     }
 
     input {
       width: 100%;
-      padding: 14px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      padding: 12px;
       font-size: 16px;
-      margin-bottom: 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
     button {
       width: 100%;
-      padding: 14px;
-      background: #25d366;
-      border: none;
-      border-radius: 30px;
+      padding: 12px;
+      margin-top: 15px;
+      background: #0a3d62;
       color: #fff;
+      border: none;
       font-size: 16px;
-      font-weight: 600;
+      border-radius: 5px;
       cursor: pointer;
     }
 
     button:hover {
-      opacity: 0.9;
+      background: #07507a;
     }
 
-    .nota {
+    .resultado {
       margin-top: 25px;
-      font-size: 14px;
-      color: #555;
-      text-align: center;
     }
 
-    footer {
+    .certificado {
+      border-left: 4px solid #2ecc71;
+      padding: 10px;
+      margin-bottom: 15px;
+      background: #f9f9f9;
+    }
+
+    .certificado a {
+      display: inline-block;
+      margin-top: 5px;
+      text-decoration: none;
+      color: #0a3d62;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+      margin-top: 15px;
       text-align: center;
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 30px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Certificados y Constancias</h1>
-  <p>Consulta y descarga documentos oficiales emitidos por GRAVIA</p>
-</header>
+<div class="contenedor">
+  <h1>Validación de Certificados</h1>
 
-<main>
-  <form>
-    <label for="dni">DNI o Código Único</label>
-    <input type="text" id="dni" placeholder="Ejemplo: 74283910">
+  <p>Ingrese su DNI para verificar sus certificados emitidos por GRAVIA.</p>
 
-    <button type="button">
-      Consultar documentos
-    </button>
-  </form>
+  <input type="text" id="dni" placeholder="Ingrese su DNI">
+  <button onclick="buscarCertificados()">Buscar certificados</button>
 
-  <p class="nota">
-    Los certificados corresponden a programas académicos formales.<br>
-    Las constancias se emiten por participación en charlas o eventos.
-  </p>
-</main>
+  <div id="resultado" class="resultado"></div>
+</div>
 
-<footer>
-  GRAVIA – Centro de Educación Profesional<br>
-  EMAGESGROUP E.I.R.L.
-</footer>
+<script>
+function buscarCertificados() {
+  const dni = document.getElementById("dni").value.trim();
+  const resultado = document.getElementById("resultado");
+
+  resultado.innerHTML = "";
+
+  const baseCertificados = {
+    "12345678": [
+      {
+        nombre: "Asistente de Planillas – 2024",
+        codigo: "GRV-APL-2024-000087",
+        pdf: "https://drive.google.com/file/d/1CGMqRkAj9n9juTcJbuVaq4HXThj8HyjE/view"
+      },
+      {
+        nombre: "Cajero Bancario y Comercial – 2025",
+        codigo: "GRV-CBC-2025-000031",
+        pdf: "https://drive.google.com/file/d/XXXXXXXXXXXX/view"
+      }
+    ]
+  };
+
+  if (baseCertificados[dni]) {
+    resultado.innerHTML = "<h3>Certificados encontrados:</h3>";
+
+    baseCertificados[dni].forEach(cert => {
+      resultado.innerHTML += `
+        <div class="certificado">
+          ✔ <strong>${cert.nombre}</strong><br>
+          Código: ${cert.codigo}<br>
+          <a href="${cert.pdf}" target="_blank">📄 Descargar PDF</a>
+        </div>
+      `;
+    });
+
+  } else {
+    resultado.innerHTML = "<p class='error'>No se encontraron certificados para este DNI.</p>";
+  }
+}
+</script>
 
 </body>
 </html>
