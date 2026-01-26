@@ -2,82 +2,80 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Certificado | GRAVIA</title>
+  <title>Certificado digital | GRAVIA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
-      color: #222;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
     }
 
     header {
       background: #0b3c5d;
       color: #fff;
       text-align: center;
-      padding: 20px;
-      font-size: 18px;
-      font-weight: 600;
+      padding: 25px 15px;
+    }
+
+    header img {
+      height: 45px;
+      margin-bottom: 10px;
     }
 
     .container {
       max-width: 900px;
-      margin: 50px auto;
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 40px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .cert-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
+    .cert-box h2 {
+      color: #0b3c5d;
+      margin-bottom: 10px;
+    }
+
+    .cert-box p {
+      margin: 6px 0;
+      font-size: 15px;
     }
 
     .preview {
-      text-align: center;
-      margin-bottom: 30px;
+      margin: 25px 0;
     }
 
     .preview img {
       max-width: 100%;
+      border-radius: 8px;
       border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-
-    .datos {
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-
-    .datos strong {
-      color: #000;
     }
 
     .btn {
       display: inline-block;
-      background: #0b3c5d;
+      margin-top: 20px;
+      background: #25d366;
       color: #fff;
-      padding: 15px 30px;
+      padding: 14px 28px;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 15px;
-      transition: background 0.3s ease;
     }
 
-    .btn:hover {
-      background: #092f48;
-    }
-
-    .footer {
+    footer {
       text-align: center;
+      margin: 40px 0 20px;
       font-size: 13px;
       color: #666;
-      margin-top: 30px;
-    }
-
-    .footer span {
-      color: #0b3c5d;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -85,46 +83,41 @@
 <body>
 
 <header>
-  Certificado emitido por GRAVIA – Formación y Capacitación Profesional
+  <img src="../assets/logo.png" alt="GRAVIA">
+  <h1>Certificado Digital</h1>
 </header>
 
 <div class="container">
 
-  <!-- VISTA PREVIA -->
-  <div class="preview">
-    <img 
-      src="https://drive.google.com/uc?id=ID_DE_LA_IMAGEN_PREVIEW"
-      alt="Vista previa del certificado"
-    >
-  </div>
+  <div class="cert-box">
 
-  <!-- DATOS DEL CERTIFICADO -->
-  <div class="datos">
-    <p><strong>Participante:</strong> Juan Pérez Gómez</p>
-    <p><strong>Programa:</strong> Asistente de Planillas</p>
-    <p><strong>Año de emisión:</strong> 2025</p>
-    <p><strong>Código único:</strong> GRV-CERT-2025-AP-000001</p>
-  </div>
+    <h2>Asistente de Planillas</h2>
 
-  <!-- BOTÓN PDF -->
-  <div style="text-align:center;">
-    <a 
-      href="https://drive.google.com/uc?id=ID_DEL_PDF"
-      class="btn"
-      target="_blank"
-      download
-    >
-      Descargar certificado en PDF
+    <p><strong>DNI:</strong> 12345678</p>
+    <p><strong>Código único:</strong> GRV-APL-2024-000087</p>
+    <p><strong>Año de emisión:</strong> 2024</p>
+
+    <div class="preview">
+      <!-- IMAGEN PREVIA DEL CERTIFICADO -->
+      <img src="https://drive.google.com/uc?id=ID_IMAGEN_PREVIEW">
+    </div>
+
+    <!-- DESCARGA DIRECTA DEL PDF -->
+    <a class="btn"
+       href="https://drive.google.com/uc?id=ID_PDF_CERTIFICADO"
+       download>
+      📄 Descargar certificado en PDF
     </a>
-  </div>
 
-  <!-- PIE -->
-  <div class="footer">
-    Documento digital válido.<br>
-    La autenticidad puede verificarse en <span>gravia.emagesgroup.com</span>
   </div>
 
 </div>
 
+<footer>
+  GRAVIA – Centro de Educación Profesional<br>
+  Certificado digital válido con código único de verificación
+</footer>
+
 </body>
 </html>
+
