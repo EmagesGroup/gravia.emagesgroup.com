@@ -2,10 +2,212 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cursos | Gravia</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>Certificados | GRAVIA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== TOPBAR ===== */
+    .topbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(11,60,93,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 35px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .topbar img {
+      height: 42px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .menu a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* ===== CONTENEDOR ===== */
+    .container {
+      max-width: 600px;
+      margin: 140px auto 80px;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      color: #0b3c5d;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    /* ===== FORM ===== */
+    form {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      background: #0b3c5d;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #092f49;
+    }
+
+    /* ===== INFO ===== */
+    .info {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+    }
+
+    .info strong {
+      color: #0b3c5d;
+    }
+
+    /* ===== BOTÓN VOLVER ===== */
+    .back {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .back a {
+      text-decoration: none;
+      color: #0b3c5d;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .back a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Cursos Gravia</h1>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <img src="assets/logo.png" alt="Gravia">
+
+  <nav class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="programas.html">Programas</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</div>
+
+<!-- ===== CONTENIDO ===== -->
+<div class="container">
+  <h1>Certificados y Constancias</h1>
+  <p class="subtitle">
+    Consulta y descarga tus <strong>certificados</strong> o <strong>constancias</strong>
+    emitidos por GRAVIA.
+  </p>
+
+  <form>
+    <label for="dni">DNI del participante</label>
+    <input type="text" id="dni" placeholder="Ejemplo: 74589632">
+
+    <label for="codigo">Código único del documento</label>
+    <input type="text" id="codigo" placeholder="Ejemplo: GRV-APL-2025-000123">
+
+    <button type="button">
+      Consultar documento
+    </button>
+  </form>
+
+  <div class="info">
+    🔒 La información mostrada es de uso exclusivo del titular.<br>
+    Si no encuentras tu documento, escríbenos a
+    <strong>gravia@emagesgroup.com</strong>
+  </div>
+
+  <div class="back">
+    <a href="index.html">← Volver a GRAVIA</a>
+  </div>
+</div>
+
+<footer>
+  GRAVIA – Centro de Educación Profesional y Capacitación
+  <small>
+    Iniciativa educativa de EMAGES GROUP<br>
+    EMAGESGROUP E.I.R.L. – RUC 20611427671
+  </small>
+</footer>
+
 </body>
 </html>
