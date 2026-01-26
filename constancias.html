@@ -2,10 +2,120 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cursos | Gravia</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>Certificados y Constancias | GRAVIA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #0b3c5d;
+      color: #fff;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 17px;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 720px;
+      margin: -40px auto 60px;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #25d366;
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .nota {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Cursos Gravia</h1>
+
+<header>
+  <h1>Certificados y Constancias</h1>
+  <p>Consulta y descarga documentos oficiales emitidos por GRAVIA</p>
+</header>
+
+<main>
+  <form>
+    <label for="dni">DNI o Código Único</label>
+    <input type="text" id="dni" placeholder="Ejemplo: 74283910">
+
+    <button type="button">
+      Consultar documentos
+    </button>
+  </form>
+
+  <p class="nota">
+    Los certificados corresponden a programas académicos formales.<br>
+    Las constancias se emiten por participación en charlas o eventos.
+  </p>
+</main>
+
+<footer>
+  GRAVIA – Centro de Educación Profesional<br>
+  EMAGESGROUP E.I.R.L.
+</footer>
+
 </body>
 </html>
