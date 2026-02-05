@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Certificados GRAVIA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Certificados | GRAVIA</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Consulta de Certificados</h1>
-    <p>Ingresa tu DNI para ver y descargar tus certificados</p>
+  <div class="contenedor">
+    <h1>Validación de Certificados</h1>
+    <p>Ingrese su DNI para consultar y descargar sus certificados</p>
 
-    <input
-      type="text"
-      id="dniInput"
-      placeholder="Ingrese su DNI"
-      maxlength="8"
-    />
-
+    <input type="text" id="dniInput" placeholder="Ingrese su DNI">
     <button onclick="buscarCertificados()">Buscar</button>
 
     <div id="resultado"></div>
