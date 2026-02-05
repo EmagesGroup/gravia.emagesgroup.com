@@ -2,23 +2,18 @@ const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmV-ladv2Gu74q
 
 let registros = [];
 
-fetch(CSV_URL)
-  .then(res => res.text())
-  .then(text => {
-    const filas = text.split("\n");
-    const encabezados = filas[0].split(",");
-
-    for (let i = 1; i < filas.length; i++) {
-      const datos = filas[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-      if (!datos) continue;
-
-      let obj = {};
-      encabezados.forEach((h, index) => {
-        obj[h.trim()] = datos[index]?.replace(/"/g, "").trim();
-      });
-      registros.push(obj);
-    }
-  });
+Papa.parse(CSV_URL, {
+  download: true,
+  header: true,
+  skipEmptyLines: true,
+  complete: function (results) {
+    registros = results.data.map(r => ({
+      ...r,
+      dni: r.dni?.trim()
+    }));
+    console.log("Certificados cargados:", registros);
+  }
+});
 
 function buscarCertificados() {
   const dni = document.getElementById("dniInput").value.trim();
