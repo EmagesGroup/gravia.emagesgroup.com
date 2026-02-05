@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <title>Certificados | GRAVIA</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- PapaParse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
 
   <div class="contenedor">
-    <h1>Validación de Certificados</h1>
-    <p>Ingrese su DNI para consultar y descargar sus certificados</p>
+    <h1>Certificados GRAVIA</h1>
+    <p>Consulta y descarga de certificados emitidos por GRAVIA</p>
 
     <input type="text" id="dniInput" placeholder="Ingrese su DNI">
-    <button onclick="buscarCertificados()">Buscar</button>
+    <button onclick="buscarCertificados()">Buscar certificados</button>
 
     <div id="resultado"></div>
   </div>
