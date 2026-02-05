@@ -1,23 +1,23 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f5f6fa;
+  background: #f4f6f8;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  max-width: 520px;
-  margin: 60px auto;
+.contenedor {
+  max-width: 500px;
+  margin: 80px auto;
   background: #ffffff;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
 }
 
 h1 {
+  color: #b30000;
   margin-bottom: 10px;
-  color: #222;
 }
 
 p {
@@ -32,37 +32,38 @@ input {
 }
 
 button {
-  width: 100%;
-  padding: 12px;
   margin-top: 15px;
-  font-size: 16px;
+  padding: 12px;
+  width: 100%;
   background: #b30000;
   color: #fff;
   border: none;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 button:hover {
   background: #8f0000;
 }
 
-.resultado {
-  margin-top: 25px;
-  text-align: left;
-}
-
-.curso {
+.certificado {
+  margin-top: 20px;
+  padding: 15px;
   border: 1px solid #ddd;
-  padding: 12px;
   border-radius: 6px;
-  margin-bottom: 10px;
+  background: #fafafa;
 }
 
-.curso a {
+.certificado a {
   display: inline-block;
-  margin-top: 5px;
+  margin-top: 10px;
   color: #b30000;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.error {
+  color: red;
+  margin-top: 20px;
 }
