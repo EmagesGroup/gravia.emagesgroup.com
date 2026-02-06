@@ -13,11 +13,14 @@ async function buscar() {
   const response = await fetch(CSV_URL);
   const data = await response.text();
 
+  // separar filas
   const filas = data.split("\n").slice(1);
+
+  // filtrar por DNI (columna 0)
   const encontrados = filas.filter(fila => {
-  const columnas = fila.split("\t");
-  return columnas[0].replace(/"/g, "").trim() === dni;
-});
+    const columnas = fila.split(",");
+    return columnas[0]?.replace(/"/g, "").trim() === dni;
+  });
 
   if (encontrados.length === 0) {
     resultado.innerHTML = "<p>No se encontraron certificados asociados al DNI ingresado.</p>";
