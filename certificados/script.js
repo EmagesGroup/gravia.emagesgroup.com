@@ -1,50 +1,48 @@
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmV-ladv2Gu74q_70lrv375kPXcn8v6hHTAv4iZdJ9mozkscUmNU9zaFRA3zI1ebhcm25sCP4TiUhD/pub?output=csv";
 
-let registros = [];
-
-Papa.parse(CSV_URL, {
-  download: true,
-  header: true,
-  skipEmptyLines: true,
-  complete: function (results) {
-    registros = results.data.map(r => ({
-      ...r,
-      dni: r.dni?.trim()
-    }));
-    console.log("Certificados cargados:", registros);
-  }
-});
-
-function buscarCertificados() {
-  const dni = document.getElementById("dniInput").value.trim();
+async function buscarCertificados() {
+  const dni = document.getElementById("dni").value.trim();
   const resultado = document.getElementById("resultado");
-  resultado.innerHTML = "";
 
   if (!dni) {
-    resultado.innerHTML = "<p class='error'>Ingrese un DNI válido</p>";
+    resultado.innerHTML = "Ingrese un DNI.";
     return;
   }
 
-  const encontrados = registros.filter(r => r.dni === dni);
+  const response = await fetch(CSV_URL);
+  const data = await response.text();
+
+  const filas = data.split("\n").slice(1);
+  const encontrados = filas.filter(f => f.startsWith(dni + ","));
 
   if (encontrados.length === 0) {
-    resultado.innerHTML = "<p class='error'>No se encontraron certificados asociados al DNI ingresado.</p>";
+    resultado.innerHTML = "No se encontraron certificados asociados al DNI ingresado.";
     return;
   }
 
-  let html = `<h3>Certificados encontrados</h3>`;
+  resultado.innerHTML = "";
 
-  encontrados.forEach(r => {
-    html += `
-      <div class="certificado">
-        <strong>${r.curso}</strong><br>
-        ${r.horas} – ${r.modalidad}<br>
-        Año: ${r.año}<br>
-        Emitido: ${r.fecha_emision}<br>
-        <a href="${r.pdf_link}" target="_blank">📄 Descargar certificado</a>
+  encontrados.forEach(fila => {
+    const cols = fila.split(",");
+
+    const curso = cols[1];
+    const año = cols[2];
+    const apellidos = cols[3];
+    const nombres = cols[4];
+    const horas = cols[5];
+    const modalidad = cols[6];
+    const fecha = cols[7];
+    const pdf = cols[9]; // LINK DIRECTO
+
+    resultado.innerHTML += `
+      <div class="cert">
+        <strong>${curso}</strong><br>
+        ${nombres} ${apellidos} – ${año}<br>
+        ${horas} | ${modalidad}<br>
+        Emitido: ${fecha}<br>
+        <a href="${pdf}" target="_blank">Descargar certificado</a>
       </div>
+      <hr>
     `;
   });
-
-  resultado.innerHTML = html;
 }
