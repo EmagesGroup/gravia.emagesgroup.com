@@ -13,12 +13,10 @@ async function buscar() {
   const response = await fetch(CSV_URL);
   const data = await response.text();
 
-  // separar filas
   const filas = data.split("\n").slice(1);
 
-  // filtrar por DNI (columna 0)
   const encontrados = filas.filter(fila => {
-    const columnas = fila.split(",");
+    const columnas = fila.split(","); // ✅ CORRECTO
     return columnas[0]?.replace(/"/g, "").trim() === dni;
   });
 
@@ -33,12 +31,12 @@ async function buscar() {
     resultado.innerHTML += `
       <div class="card">
         <h3>${cols[2]}</h3>
-        <p><strong>Participante:</strong> ${cols[5]} ${cols[4]}</p>
+        <p><strong>Participante:</strong> ${cols[6]} ${cols[5]}</p>
         <p><strong>Código:</strong> ${cols[1]}</p>
-        <p><strong>Horas:</strong> ${cols[6]}</p>
-        <p><strong>Modalidad:</strong> ${cols[7]}</p>
-        <p><strong>Fecha emisión:</strong> ${cols[8]}</p>
-        <a href="${cols[10]}" target="_blank">⬇ Descargar certificado</a>
+        <p><strong>Horas:</strong> ${cols[7]}</p>
+        <p><strong>Modalidad:</strong> ${cols[8]}</p>
+        <p><strong>Fecha emisión:</strong> ${cols[9]}</p>
+        <a href="${cols[11]}" target="_blank">⬇ Descargar certificado</a>
       </div>
     `;
   });
