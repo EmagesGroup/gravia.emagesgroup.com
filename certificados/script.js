@@ -11,23 +11,20 @@ async function buscar() {
   }
 
   const response = await fetch(CSV_URL);
-  const data = await response.text();
+  const text = await response.text();
 
-  const filas = data.split("\n").slice(1);
+  const filas = text.split(/\r?\n/).slice(1);
 
-  const encontrados = filas.filter(fila => {
-    const columnas = fila.split(","); // ✅ CORRECTO
-    return columnas[0]?.replace(/"/g, "").trim() === dni;
-  });
+  const encontrados = filas
+    .map(fila => fila.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g))
+    .filter(cols => cols && cols[0]?.replace(/"/g, "").trim() === dni);
 
   if (encontrados.length === 0) {
     resultado.innerHTML = "<p>No se encontraron certificados asociados al DNI ingresado.</p>";
     return;
   }
 
-  encontrados.forEach(fila => {
-    const cols = fila.split(",");
-
+  encontrados.forEach(cols => {
     resultado.innerHTML += `
       <div class="card">
         <h3>${cols[2]}</h3>
