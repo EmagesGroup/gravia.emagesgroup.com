@@ -15,7 +15,7 @@ async function buscar() {
 
   const filas = data.split("\n").slice(1);
   const encontrados = filas.filter(fila => {
-  const columnas = fila.split(",");
+  const columnas = fila.split("\t");
   return columnas[0].replace(/"/g, "").trim() === dni;
 });
 
