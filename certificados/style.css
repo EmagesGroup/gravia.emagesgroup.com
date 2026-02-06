@@ -1,69 +1,42 @@
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
-  margin: 0;
-  padding: 0;
 }
 
-.contenedor {
-  max-width: 500px;
-  margin: 80px auto;
-  background: #ffffff;
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #fff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
-}
-
-h1 {
-  color: #b30000;
-  margin-bottom: 10px;
-}
-
-p {
-  color: #555;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 button {
-  margin-top: 15px;
-  padding: 12px;
-  width: 100%;
-  background: #b30000;
-  color: #fff;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #0b3c5d;
+  color: white;
   border: none;
-  font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
 }
 
-button:hover {
-  background: #8f0000;
-}
-
-.certificado {
+.card {
   margin-top: 20px;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  background: #fafafa;
 }
 
-.certificado a {
+.card a {
   display: inline-block;
   margin-top: 10px;
-  color: #b30000;
+  color: #0b3c5d;
   font-weight: bold;
-  text-decoration: none;
-}
-
-.error {
-  color: red;
-  margin-top: 20px;
 }
