@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Certificados | GRAVIA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<style>
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+.box{
+  max-width:600px;
+  margin:60px auto;
+  background:#ffffff;
+  padding:30px;
+  border-radius:8px;
+}
+h1{
+  text-align:center;
+  color:#0a3d62;
+}
+input,button{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  margin-top:10px;
+}
+button{
+  background:#0a3d62;
+  color:#fff;
+  border:0;
+  cursor:pointer;
+}
+.cert{
+  margin-top:20px;
+  padding:15px;
+  background:#f9fafc;
+  border-left:4px solid #0a3d62;
+}
+a{
+  color:#0a3d62;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Certificados GRAVIA</h1>
+
+  <input id="dni" placeholder="Ingrese su DNI">
+  <button onclick="buscar()">Buscar certificados</button>
+
+  <div id="resultado"></div>
+</div>
+
+<script>
+const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmV-ladv2Gu74q_70lrv375kPXcn8v6hHTAv4iZdJ9mozkscUmNU9zaFRA3zI1ebhcm25sCP4TiUhD/pub?output=csv";
+
+async function buscar(){
+  const dni = document.getElementById("dni").value.trim();
+  const out = document.getElementById("resultado");
+  out.innerHTML = "";
+
+  if(!dni){
+    out.innerHTML = "Ingrese un DNI válido.";
+    return;
+  }
+
+  const res = await fetch(CSV_URL);
+  const text = await res.text();
+  const filas = text.split("\n").slice(1);
+
+  let encontrado = false;
+
+  filas.forEach(fila=>{
+    const c = fila.split(",");
+    const dniCSV = c[0]?.replace(/"/g,"").trim();
+
+    if(dniCSV === dni){
+      encontrado = true;
+      out.innerHTML += `
+        <div class="cert">
+          <strong>${c[2]}</strong><br>
+          Participante: ${c[5]} ${c[4]}<br>
+          Código: ${c[1]}<br>
+          Horas: ${c[6]}<br>
+          Modalidad: ${c[7]}<br>
+          Fecha: ${c[8]}<br>
+          <a href="${c[10]}" target="_blank">⬇ Descargar certificado</a>
+        </div>
+      `;
+    }
+  });
+
+  if(!encontrado){
+    out.innerHTML = "No se encontraron certificados para este DNI.";
+  }
+}
+</script>
+
+</body>
+</html>
