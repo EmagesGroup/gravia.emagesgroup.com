@@ -7,43 +7,103 @@
 
 <style>
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background:#f4f6f8;
   margin:0;
 }
+
 .box{
-  max-width:600px;
-  margin:60px auto;
+  max-width:720px;
+  margin:50px auto;
   background:#ffffff;
-  padding:30px;
-  border-radius:8px;
+  padding:35px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
+
 h1{
   text-align:center;
   color:#0a3d62;
+  margin-bottom:5px;
 }
+
+.sub{
+  text-align:center;
+  color:#555;
+  margin-bottom:25px;
+}
+
 input,button{
   width:100%;
-  padding:12px;
+  padding:14px;
   font-size:16px;
   margin-top:10px;
+  border-radius:6px;
 }
+
+input{
+  border:1px solid #ccc;
+}
+
 button{
   background:#0a3d62;
   color:#fff;
   border:0;
   cursor:pointer;
-}
-.cert{
-  margin-top:20px;
-  padding:15px;
-  background:#f9fafc;
-  border-left:4px solid #0a3d62;
-}
-a{
-  color:#0a3d62;
   font-weight:bold;
+}
+
+button:hover{
+  background:#062f4f;
+}
+
+.participante{
+  margin-top:25px;
+  padding:15px;
+  background:#eef4fa;
+  border-radius:6px;
+  font-size:15px;
+}
+
+.cert{
+  margin-top:18px;
+  padding:18px;
+  background:#f9fafc;
+  border-left:5px solid #0a3d62;
+  border-radius:6px;
+}
+
+.cert h3{
+  margin:0 0 10px 0;
+  color:#0a3d62;
+}
+
+.cert .grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 20px;
+  font-size:14px;
+}
+
+a.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 16px;
+  background:#0a3d62;
+  color:#fff;
+  border-radius:5px;
   text-decoration:none;
+  font-size:14px;
+}
+
+a.btn:hover{
+  background:#062f4f;
+}
+
+.msg{
+  margin-top:20px;
+  color:#c0392b;
+  font-weight:bold;
 }
 </style>
 </head>
@@ -68,7 +128,7 @@ async function buscar(){
   out.innerHTML = "";
 
   if(!dni){
-    out.innerHTML = "Ingrese un DNI válido.";
+    out.innerHTML = "<div class='msg'>Ingrese un DNI válido.</div>";
     return;
   }
 
@@ -76,33 +136,45 @@ async function buscar(){
   const text = await res.text();
   const filas = text.split("\n").slice(1);
 
-  let encontrado = false;
+  let encontrados = [];
 
   filas.forEach(fila=>{
-    const c = fila.split(",");
-    const dniCSV = c[0]?.replace(/"/g,"").trim();
-
-    if(dniCSV === dni){
-      encontrado = true;
-      out.innerHTML += `
-        <div class="cert">
-          <strong>${c[2]}</strong><br>
-          Participante: ${c[5]} ${c[4]}<br>
-          Código: ${c[1]}<br>
-          Horas: ${c[6]}<br>
-          Modalidad: ${c[7]}<br>
-          Fecha: ${c[8]}<br>
-          <a href="${c[10]}" target="_blank">⬇ Descargar certificado</a>
-        </div>
-      `;
+    const c = fila.split(",").map(x=>x.replace(/"/g,"").trim());
+    if(c[0] === dni){
+      encontrados.push(c);
     }
   });
 
-  if(!encontrado){
-    out.innerHTML = "No se encontraron certificados para este DNI.";
+  if(encontrados.length === 0){
+    out.innerHTML = "<div class='msg'>No se encontraron certificados para este DNI.</div>";
+    return;
   }
+
+  // Cabecera del participante (una sola vez)
+  out.innerHTML = `
+    <div class="participante">
+      <strong>Participante:</strong> ${encontrados[0][5]} ${encontrados[0][4]}<br>
+      <strong>DNI:</strong> ${dni}<br>
+      <strong>Certificados encontrados:</strong> ${encontrados.length}
+    </div>
+  `;
+
+  // Listado de certificados
+  encontrados.forEach(c=>{
+    out.innerHTML += `
+      <div class="cert">
+        <h3>${c[2]}</h3>
+        <div class="grid">
+          <div><strong>Código:</strong> ${c[1]}</div>
+          <div><strong>Horas:</strong> ${c[6]}</div>
+          <div><strong>Modalidad:</strong> ${c[7]}</div>
+          <div><strong>Fecha:</strong> ${c[8]}</div>
+        </div>
+        <a class="btn" href="${c[10]}" target="_blank">⬇ Descargar certificado</a>
+      </div>
+    `;
+  });
 }
 </script>
-
 </body>
 </html>
