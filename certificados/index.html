@@ -21,6 +21,18 @@ body{
   box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
+/* LOGO */
+.logo{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.logo img{
+  max-width:160px;
+  height:auto;
+}
+
+/* TITULOS */
 h1{
   text-align:center;
   color:#0a3d62;
@@ -33,6 +45,7 @@ h1{
   margin-bottom:25px;
 }
 
+/* INPUT Y BOTON */
 input,button{
   width:100%;
   padding:14px;
@@ -57,6 +70,7 @@ button:hover{
   background:#062f4f;
 }
 
+/* PARTICIPANTE */
 .participante{
   margin-top:25px;
   padding:15px;
@@ -65,6 +79,7 @@ button:hover{
   font-size:15px;
 }
 
+/* CERTIFICADOS */
 .cert{
   margin-top:18px;
   padding:18px;
@@ -85,6 +100,7 @@ button:hover{
   font-size:14px;
 }
 
+/* BOTON DESCARGA */
 a.btn{
   display:inline-block;
   margin-top:12px;
@@ -100,6 +116,7 @@ a.btn:hover{
   background:#062f4f;
 }
 
+/* MENSAJES */
 .msg{
   margin-top:20px;
   color:#c0392b;
@@ -111,12 +128,23 @@ a.btn:hover{
 <body>
 
 <div class="box">
-  <h1>Certificados GRAVIA</h1>
 
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="logo-gravia.png" alt="GRAVIA">
+  </div>
+
+  <!-- TITULO -->
+  <h1>Certificados GRAVIA</h1>
+  <p class="sub">Plataforma de verificación de certificados</p>
+
+  <!-- BUSCADOR -->
   <input id="dni" placeholder="Ingrese su DNI">
   <button onclick="buscar()">Buscar certificados</button>
 
+  <!-- RESULTADOS -->
   <div id="resultado"></div>
+
 </div>
 
 <script>
@@ -150,7 +178,7 @@ async function buscar(){
     return;
   }
 
-  // Cabecera del participante (una sola vez)
+  // CABECERA PARTICIPANTE
   out.innerHTML = `
     <div class="participante">
       <strong>Participante:</strong> ${encontrados[0][5]} ${encontrados[0][4]}<br>
@@ -159,7 +187,7 @@ async function buscar(){
     </div>
   `;
 
-  // Listado de certificados
+  // LISTADO CERTIFICADOS
   encontrados.forEach(c=>{
     out.innerHTML += `
       <div class="cert">
@@ -176,5 +204,6 @@ async function buscar(){
   });
 }
 </script>
+
 </body>
 </html>
